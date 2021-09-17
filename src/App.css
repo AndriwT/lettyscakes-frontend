@@ -1,3 +1,7 @@
+*{
+  font-family:sans-serif;
+}
+
 .App {
   text-align: center;
 }
@@ -36,3 +40,109 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+.section1{
+  position: relative;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
+.hero-text h1{
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+  margin-bottom: 10px;
+  
+}
+
+.hero-subtext{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  
+}
+
+.section2 h3, h1{
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.reviews-container{
+  width: 270px;
+  display: inline-block;
+  flex-direction: row;
+  justify-content: center;
+  margin-left: 70px;
+  margin-top: 50px;
+}
+
+.review-card{
+  height: 250px;
+}
+
+.orderForm{
+  width: 500px;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+} 
+
+.auth-form{
+  height: 320px;
+}
+
+.admin-container{
+  height: 370px;
+}
+
+.admin-menu{
+  padding-top: 150px;
+  display: flex;
+  justify-content: center;
+}
+
+.admin-menu-btns{
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.admin-menu-btn{
+  margin: 0 10px 0 10px;
+}
+
+.orders-table{
+  width: 1000px;
+ 
+
+}
+
+.table-container{
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  min-height: 330px;
+}
+
+.btn{
+  margin-top: 20px;
+  color: white;
+}
+
+.table-description{
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+  white-space: normal; 
+}
+
+
