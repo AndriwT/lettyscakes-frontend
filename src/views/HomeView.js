@@ -42,7 +42,7 @@ const HomeView = () => {
         </div>
         <div className="hero-subtext">
           <p>Gourmet Sweets & Desserts Custom Made</p>
-          <Button href="/sweets" variant="outline-light" size="lg">
+          <Button link="/sweets" variant="outline-light" size="lg">
             Browse Desserts
           </Button>
         </div>
