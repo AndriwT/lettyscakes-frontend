@@ -21,6 +21,13 @@ const AdminView = () => {
         >
           Add Desserts
         </Button>
+        <Button
+          className="admin-menu-btn"
+          href="/edit-sweets"
+          variant="outline-primary"
+        >
+          Manage Desserts
+        </Button>
       </div>
     </div>
   );

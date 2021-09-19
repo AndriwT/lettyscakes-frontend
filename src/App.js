@@ -11,6 +11,7 @@ import OrdersView from "./views/OrdersView";
 import AddSweetsView from "./views/AddSweetsView";
 import AuthView from "./views/AuthView";
 import AdminView from "./views/AdminView";
+import ManageSweetsView from "./views/ManageSweetsView";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={HomeView} />
           <Route exact path="/add-sweets" component={AddSweetsView} />
+          <Route exact path="/edit-sweets" component={ManageSweetsView} />
           <Route exact path="/sweets" component={SweetsView} />
           <Route exact path="/order" component={PlaceOrderView} />
           <Route exact path="/orders" component={OrdersView} />
