@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
-import { Button, Table } from "react-bootstrap";
-import { getSweetsFromApi } from "../services/sweetService";
+import { Button, Table, Modal } from "react-bootstrap";
+import { deleteSweetFromApi, getSweetsFromApi } from "../services/sweetService";
 
 const ManageSweetsView = () => {
   const [sweets, setSweets] = useState([]);
+  const [id, setId] = useState("");
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
     getSweets();
@@ -16,6 +18,20 @@ const ManageSweetsView = () => {
     } catch (error) {
       console.log("Server not working");
     }
+  };
+
+  const deleteSweet = () => {
+    const filtered = sweets.filter((sweet) => {
+      return id !== sweet._id;
+    });
+    deleteSweetFromApi(id);
+    setSweets(filtered);
+    setShow(false);
+  };
+
+  const handleShow = (id) => {
+    setId(id);
+    setShow(true);
   };
 
   return (
@@ -40,7 +56,7 @@ const ManageSweetsView = () => {
                       variant="outline-danger"
                       onClick={() => {
                         // deleteOrder(order._id, i);
-                        // handleShow(order._id);
+                        handleShow(sweet._id);
                       }}
                     >
                       Delete
@@ -50,7 +66,7 @@ const ManageSweetsView = () => {
               ))}
           </tbody>
         </Table>
-        {/* <>
+        <>
           <Modal show={show}>
             <Modal.Header
               closeButton
@@ -59,7 +75,7 @@ const ManageSweetsView = () => {
               }}
             >
               <Modal.Title>
-                Are you sure you want to delete this order?
+                Are you sure you want to delete this dessert?
               </Modal.Title>
             </Modal.Header>
             <Modal.Body>
@@ -69,7 +85,7 @@ const ManageSweetsView = () => {
               <Button
                 variant="success"
                 onClick={() => {
-                  deleteOrder();
+                  deleteSweet();
                 }}
               >
                 Yes
@@ -84,7 +100,7 @@ const ManageSweetsView = () => {
               </Button>
             </Modal.Footer>
           </Modal>
-        </> */}
+        </>
       </div>
     </div>
   );
