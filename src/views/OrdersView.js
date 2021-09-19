@@ -83,7 +83,7 @@ const OrdersView = () => {
               </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              Once you click "yes" you won't be able to retrieve it back
+              Once you click "yes" you won't be able to retrieve it back.
             </Modal.Body>
             <Modal.Footer>
               <Button

@@ -1,5 +1,6 @@
 import { Button } from "react-bootstrap";
 import ReviewsCard from "../components/ReviewsCard";
+import { Link } from "react-router-dom";
 
 const reviews = [
   {
@@ -42,7 +43,7 @@ const HomeView = () => {
         </div>
         <div className="hero-subtext">
           <p>Gourmet Sweets & Desserts Custom Made</p>
-          <Button link="/sweets" variant="outline-light" size="lg">
+          <Button href="/sweets" variant="outline-light" size="lg">
             Browse Desserts
           </Button>
         </div>
@@ -61,4 +62,3 @@ const HomeView = () => {
 };
 
 export default HomeView;
-// Gourmet Sweets & Desserts Custom Made

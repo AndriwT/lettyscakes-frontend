@@ -68,6 +68,9 @@
   
 }
 
+.section2{
+  min-height: 370px;
+}
 .section2 h3, h1{
   padding-top: 50px;
   display: flex;
@@ -143,6 +146,29 @@
   word-wrap: break-word;
   hyphens: auto;
   white-space: normal; 
+}
+
+.delete-sweets{
+  margin-left: 50px;
+}
+
+.delete-sweets-ul{
+  list-style: none;
+}
+
+.delete-sweets-ul li{
+  display: flex;
+  align-items: baseline;
+
+}
+.delete-sweets-ul Button{
+  display: flex;
+  align-items: baseline;
+  margin-right: 10px;
+}
+
+.delete-sweets-ul-h4{
+  margin-left: 30px;
 }
 
 
