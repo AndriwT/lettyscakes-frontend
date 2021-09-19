@@ -12,10 +12,10 @@ export const postSweetToApi = async (sweet) => {
   return response;
 };
 
-// export const putSweetToApi = async (id, sweet) => {
-//   const response = await axios.put(`${apiUrl}/sweets/sweet/${id}`, sweet);
-//   return response;
-// };
+export const putSweetToApi = async (id, sweet) => {
+  const response = await axios.put(`${apiUrl}/sweets/sweet/${id}`, sweet);
+  return response;
+};
 
 export const deleteSweetFromApi = async (id) => {
   const response = await axios.delete(`${apiUrl}/sweets/sweet/${id}`);
