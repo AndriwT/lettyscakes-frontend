@@ -89,6 +89,7 @@ const ManageSweetsView = () => {
                       </Button>
                       <Button
                         variant="outline-danger"
+                        className="manage-delete"
                         onClick={() => {
                           // deleteOrder(order._id, i);
                           handleShow(sweet._id);
