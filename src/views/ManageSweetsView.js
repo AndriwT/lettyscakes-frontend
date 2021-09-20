@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Button, Table, Modal } from "react-bootstrap";
+import { Button, Table, Modal, FormLabel, Form } from "react-bootstrap";
 import { useHistory } from "react-router";
 import {
   deleteSweetFromApi,
@@ -68,6 +68,7 @@ const ManageSweetsView = () => {
               <th>Name</th>
               <th>Description</th>
               <th>Price</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -78,7 +79,7 @@ const ManageSweetsView = () => {
                     <td>{sweet.name}</td>
                     <td className="table-description">{sweet.description}</td>
                     <td>{sweet.price}</td>
-                    <div className="manage-sweets-btns">
+                    <td className="manage-sweets-btns">
                       <Button
                         variant="outline-primary"
                         onClick={() => {
@@ -97,7 +98,7 @@ const ManageSweetsView = () => {
                       >
                         Delete
                       </Button>
-                    </div>
+                    </td>
                   </tr>
                 </>
               ))}
@@ -115,30 +116,37 @@ const ManageSweetsView = () => {
               <Modal.Title>Edit</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              <input
-                value={sweet.name}
-                onChange={handleChange}
-                className="form-control"
-                name="name"
-                type="text"
-                placeholder="Name"
-              />
-              <textarea
-                value={sweet.description}
-                onChange={handleChange}
-                className="form-control"
-                name="description"
-                rows={5}
-                placeholder="Description..."
-              />
-              <input
-                value={sweet.price}
-                onChange={handleChange}
-                className="form-control"
-                name="price"
-                type="text"
-                placeholder="Price"
-              />
+              <Form>
+                <FormLabel>Name</FormLabel>
+                <input
+                  value={sweet.name}
+                  onChange={handleChange}
+                  className="form-control"
+                  name="name"
+                  type="text"
+                  placeholder="Name"
+                />
+                <br />
+                <FormLabel>Description</FormLabel>
+                <textarea
+                  value={sweet.description}
+                  onChange={handleChange}
+                  className="form-control"
+                  name="description"
+                  rows={5}
+                  placeholder="Description..."
+                />
+                <br />
+                <FormLabel>Price</FormLabel>
+                <input
+                  value={sweet.price}
+                  onChange={handleChange}
+                  className="form-control"
+                  name="price"
+                  type="text"
+                  placeholder="Price"
+                />
+              </Form>
             </Modal.Body>
             <Modal.Footer>
               <Button
