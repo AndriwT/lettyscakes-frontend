@@ -3,16 +3,13 @@ import { Button, Modal, Table } from "react-bootstrap";
 import {
   getOrdersFromApi,
   deleteOrderFromApi,
-  putOrderToApi,
+  // putOrderToApi,
 } from "../services/orderService";
 
 const OrdersView = () => {
   const [orders, setOrders] = useState([]);
   const [show, setShow] = useState(false);
   const [id, setId] = useState("");
-
-  let completed = "Completed";
-  let incomplete = "Incomplete";
 
   const handleShow = (id) => {
     setId(id);
@@ -41,16 +38,16 @@ const OrdersView = () => {
     setShow(false);
   };
 
-  const markCompleted = (id, order) => {
-    order.completion = true;
-    putOrderToApi(id, order);
-    window.location.reload();
-    if (order.completion === true) {
-      order.completion.value = "Completed";
-    } else {
-      order.completion.value = "Incomplete";
-    }
-  };
+  // const markCompleted = (id, order) => {
+  //   order.completion = true;
+  //   putOrderToApi(id, order);
+  //   window.location.reload();
+  //   if (order.completion === true) {
+  //     order.completion.value = "Completed";
+  //   } else {
+  //     order.completion.value = "Incomplete";
+  //   }
+  // };
 
   return (
     <div className="table-container">
@@ -63,7 +60,7 @@ const OrdersView = () => {
               <th>Description</th>
               {/* <th>Category</th> */}
               <th>Date</th>
-              <th>Complete</th>
+              {/* <th>Complete</th> */}
               <th>Delete</th>
             </tr>
           </thead>
@@ -77,7 +74,7 @@ const OrdersView = () => {
                     <td className="table-description">{order.description}</td>
                     {/* <td>{order.category.name}</td> */}
                     <td>{new Date(order.date).toLocaleDateString("en-GB")}</td>
-                    <td>
+                    {/* <td>
                       <input
                         type="checkbox"
                         onClick={() => {
@@ -85,7 +82,7 @@ const OrdersView = () => {
                         }}
                       />
                       <p>{order.completion.value}</p>
-                    </td>
+                    </td> */}
                     <td>
                       <Button
                         className="manage-delete"
