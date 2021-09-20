@@ -16,13 +16,6 @@ const AdminView = () => {
         </Button>
         <Button
           className="admin-menu-btn"
-          href="/add-sweets"
-          variant="outline-primary"
-        >
-          Add Desserts
-        </Button>
-        <Button
-          className="admin-menu-btn"
           href="/edit-sweets"
           variant="outline-primary"
         >

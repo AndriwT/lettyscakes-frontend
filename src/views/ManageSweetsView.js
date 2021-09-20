@@ -60,150 +60,161 @@ const ManageSweetsView = () => {
   };
 
   return (
-    <div className="table-container">
-      <div className="orders-table">
-        <Table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Description</th>
-              <th>Price</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {sweets &&
-              sweets.map((sweet) => (
-                <>
-                  <tr key={sweet._id}>
-                    <td>{sweet.name}</td>
-                    <td className="table-description">{sweet.description}</td>
-                    <td>{sweet.price}</td>
-                    <td className="manage-sweets-btns">
-                      <Button
-                        variant="outline-primary"
-                        onClick={() => {
-                          handleEditShow(sweet);
-                        }}
-                      >
-                        Edit
-                      </Button>
-                      <Button
-                        variant="outline-danger"
-                        className="manage-delete"
-                        onClick={() => {
-                          // deleteOrder(order._id, i);
-                          handleShow(sweet._id);
-                        }}
-                      >
-                        Delete
-                      </Button>
-                    </td>
-                  </tr>
-                </>
-              ))}
-          </tbody>
-        </Table>
-        <>
-          {/* // -------------------------------------------------Modal for editing */}
-          <Modal show={editShow}>
-            <Modal.Header
-              closeButton
-              onClick={() => {
-                setEditShow(false);
-              }}
-            >
-              <Modal.Title>Edit</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-              <Form>
-                <FormLabel>Name</FormLabel>
-                <input
-                  value={sweet.name}
-                  onChange={handleChange}
-                  className="form-control"
-                  name="name"
-                  type="text"
-                  placeholder="Name"
-                />
-                <br />
-                <FormLabel>Description</FormLabel>
-                <textarea
-                  value={sweet.description}
-                  onChange={handleChange}
-                  className="form-control"
-                  name="description"
-                  rows={5}
-                  placeholder="Description..."
-                />
-                <br />
-                <FormLabel>Price</FormLabel>
-                <input
-                  value={sweet.price}
-                  onChange={handleChange}
-                  className="form-control"
-                  name="price"
-                  type="text"
-                  placeholder="Price"
-                />
-              </Form>
-            </Modal.Body>
-            <Modal.Footer>
-              <Button
-                variant="success"
-                onClick={() => {
-                  handleSave(sweet._id, sweet);
-                }}
-              >
-                Save
-              </Button>
-              <Button
-                variant="danger"
+    <>
+      <div className="add-edit-sweets">
+        <Button
+          className="admin-menu-btn"
+          href="/add-sweets"
+          variant="outline-primary"
+        >
+          Add Desserts
+        </Button>
+      </div>
+      <div className="table-container">
+        <div className="orders-table">
+          <Table>
+            <thead>
+              <tr>
+                <th>Dessert Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {sweets &&
+                sweets.map((sweet) => (
+                  <>
+                    <tr key={sweet._id}>
+                      <td>{sweet.name}</td>
+                      <td className="table-description">{sweet.description}</td>
+                      <td>${sweet.price}.00</td>
+                      <td className="manage-sweets-btns">
+                        <Button
+                          variant="outline-primary"
+                          onClick={() => {
+                            handleEditShow(sweet);
+                          }}
+                        >
+                          Edit
+                        </Button>
+                        <Button
+                          variant="outline-danger"
+                          className="manage-delete"
+                          onClick={() => {
+                            // deleteOrder(order._id, i);
+                            handleShow(sweet._id);
+                          }}
+                        >
+                          Delete
+                        </Button>
+                      </td>
+                    </tr>
+                  </>
+                ))}
+            </tbody>
+          </Table>
+          <>
+            {/* // -------------------------------------------------Modal for editing */}
+            <Modal show={editShow}>
+              <Modal.Header
+                closeButton
                 onClick={() => {
                   setEditShow(false);
                 }}
               >
-                Cancel
-              </Button>
-            </Modal.Footer>
-          </Modal>
-          {/* // -------------------------------------------------Modal for deletion */}
-          <Modal show={show}>
-            <Modal.Header
-              closeButton
-              onClick={() => {
-                setShow(false);
-              }}
-            >
-              <Modal.Title>
-                Are you sure you want to delete this dessert?
-              </Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-              Once you click "yes" you won't be able to retrieve it back.
-            </Modal.Body>
-            <Modal.Footer>
-              <Button
-                variant="success"
-                onClick={() => {
-                  deleteSweet();
-                }}
-              >
-                Yes
-              </Button>
-              <Button
-                variant="danger"
+                <Modal.Title>Edit Dessert</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                <Form>
+                  <FormLabel>Name</FormLabel>
+                  <input
+                    value={sweet.name}
+                    onChange={handleChange}
+                    className="form-control"
+                    name="name"
+                    type="text"
+                    placeholder="Name"
+                  />
+                  <br />
+                  <FormLabel>Description</FormLabel>
+                  <textarea
+                    value={sweet.description}
+                    onChange={handleChange}
+                    className="form-control"
+                    name="description"
+                    rows={5}
+                    placeholder="Description..."
+                  />
+                  <br />
+                  <FormLabel>Price</FormLabel>
+                  <input
+                    value={sweet.price}
+                    onChange={handleChange}
+                    className="form-control"
+                    name="price"
+                    type="text"
+                    placeholder="Price"
+                  />
+                </Form>
+              </Modal.Body>
+              <Modal.Footer>
+                <Button
+                  variant="success"
+                  onClick={() => {
+                    handleSave(sweet._id, sweet);
+                  }}
+                >
+                  Save
+                </Button>
+                <Button
+                  variant="outline-secondary"
+                  onClick={() => {
+                    setEditShow(false);
+                  }}
+                >
+                  Cancel
+                </Button>
+              </Modal.Footer>
+            </Modal>
+            {/* // -------------------------------------------------Modal for deletion */}
+            <Modal show={show}>
+              <Modal.Header
+                closeButton
                 onClick={() => {
                   setShow(false);
                 }}
               >
-                Cancel
-              </Button>
-            </Modal.Footer>
-          </Modal>
-        </>
+                <Modal.Title>
+                  Are you sure you want to delete this dessert?
+                </Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                Once you click "yes" you won't be able to retrieve it back.
+              </Modal.Body>
+              <Modal.Footer>
+                <Button
+                  variant="success"
+                  onClick={() => {
+                    deleteSweet();
+                  }}
+                >
+                  Yes
+                </Button>
+                <Button
+                  variant="outline-secondary"
+                  onClick={() => {
+                    setShow(false);
+                  }}
+                >
+                  Cancel
+                </Button>
+              </Modal.Footer>
+            </Modal>
+          </>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

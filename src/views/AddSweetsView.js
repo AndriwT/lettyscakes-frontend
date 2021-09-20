@@ -65,7 +65,7 @@ const AddSweetsView = () => {
   return (
     <div className="container mt-5">
       <Form className="orderForm">
-        <h2>New Sweet</h2>
+        <h2>New Dessert</h2>
         <FormLabel>Dessert Name</FormLabel>
         <input
           value={sweet.name}
@@ -73,7 +73,6 @@ const AddSweetsView = () => {
           className="form-control"
           name="name"
           type="text"
-          placeholder="Name"
         />
         <br />
         <FormLabel>Description</FormLabel>
@@ -83,7 +82,7 @@ const AddSweetsView = () => {
           className="form-control"
           name="description"
           rows={5}
-          placeholder="Description..."
+          placeholder="Dessert Description..."
         />
         <br />
         <FormLabel>Price</FormLabel>
@@ -93,7 +92,6 @@ const AddSweetsView = () => {
           className="form-control"
           name="price"
           type="text"
-          placeholder="Price"
         />
         <br />
         <FormLabel>Display Image</FormLabel>
@@ -106,7 +104,7 @@ const AddSweetsView = () => {
           placeholder="Image"
         />
         <button onClick={handleSubmit} className="btn btn-outline-primary">
-          Add Product
+          Add Dessert
         </button>
       </Form>
       <div className="delete-sweets">
@@ -130,6 +128,13 @@ const AddSweetsView = () => {
                 <hr />
               </>
             ))}
+          <Button
+            className="admin-menu-btn"
+            href="/edit-sweets"
+            variant="outline-primary"
+          >
+            Manage Desserts
+          </Button>
         </ul>
       </div>
       <>
@@ -157,7 +162,7 @@ const AddSweetsView = () => {
               Yes
             </Button>
             <Button
-              variant="danger"
+              variant="outline-secondary"
               onClick={() => {
                 setShow(false);
               }}

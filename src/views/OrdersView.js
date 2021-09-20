@@ -45,6 +45,8 @@ const OrdersView = () => {
               <th>Phone Number</th>
               <th>Description</th>
               <th>Category</th>
+              <th>Date</th>
+              <th>Delete</th>
             </tr>
           </thead>
           <tbody>
@@ -56,15 +58,18 @@ const OrdersView = () => {
                     <td>{order.phone}</td>
                     <td className="table-description">{order.description}</td>
                     <td>{order.category.name}</td>
-                    <Button
-                      variant="outline-danger"
-                      onClick={() => {
-                        // deleteOrder(order._id, i);
-                        handleShow(order._id);
-                      }}
-                    >
-                      Delete
-                    </Button>
+                    <td>{order.date}</td>
+                    <td>
+                      <Button
+                        variant="outline-danger"
+                        onClick={() => {
+                          // deleteOrder(order._id, i);
+                          handleShow(order._id);
+                        }}
+                      >
+                        Delete
+                      </Button>
+                    </td>
                   </tr>
                 </>
               ))}

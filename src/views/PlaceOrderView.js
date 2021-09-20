@@ -11,7 +11,8 @@ const PlaceOrderView = () => {
     phone: "",
     category: "",
     description: "",
-    img: "",
+    date: "",
+    // img: "",
   });
 
   useEffect(() => {
@@ -37,9 +38,10 @@ const PlaceOrderView = () => {
       setOrder({
         name: "",
         phone: "",
-        category: event.target.value,
         description: "",
-        img: "",
+        date: event.target.value,
+        category: event.target.value,
+        // img: "",
       });
       alert("Your order has been submitted!");
       window.location.reload();
@@ -59,7 +61,7 @@ const PlaceOrderView = () => {
           className="form-control"
           name="name"
           type="text"
-          placeholder="name"
+          placeholder="First, Last"
         />
         <br />
         <FormLabel>Phone Number</FormLabel>
@@ -69,7 +71,7 @@ const PlaceOrderView = () => {
           className="form-control"
           name="phone"
           type="text"
-          placeholder="Phone Number"
+          placeholder="XXX-XXX-XXXX"
         />
         <br />
         <FormLabel>Details</FormLabel>
@@ -81,6 +83,15 @@ const PlaceOrderView = () => {
           rows={5}
           placeholder="Order details..."
         />
+        <br />
+        <FormLabel>Date</FormLabel>
+        {/* <input
+          value={order.date}
+          onChange={handleChange}
+          className="form-control"
+          name="date"
+          type="date"
+        /> */}
         {/* <input
           value={order.img}
           onChange={handleChange}
