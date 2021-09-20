@@ -43,11 +43,7 @@ const AuthView = () => {
           placeholder="password"
           onChange={(e) => setPassword(e.target.value)}
         />
-        <Button
-          onClick={handleSubmit}
-          className="btn btn-outline-primary"
-          variant="outline-primary"
-        >
+        <Button onClick={handleSubmit} className="custom-button">
           Login
         </Button>
       </Form>

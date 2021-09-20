@@ -1,34 +1,35 @@
 import { useState, useEffect } from "react";
-import { getCategoriesFromApi } from "../services/categoryService";
+// import { getCategoriesFromApi } from "../services/categoryService";
 import { postOrderToApi } from "../services/orderService";
 import "../App.css";
-import { Form, FormLabel } from "react-bootstrap";
+import { Button, Form, FormLabel } from "react-bootstrap";
 
 const PlaceOrderView = () => {
-  const [categories, setCategories] = useState([]);
+  // const [categories, setCategories] = useState([]);
   const [order, setOrder] = useState({
     name: "",
     phone: "",
-    category: "",
+    // category: "",
     description: "",
     date: "",
     // img: "",
   });
 
-  useEffect(() => {
-    getCategories();
-  }, []);
+  // useEffect(() => {
+  //   getCategories();
+  // }, []);
 
-  const getCategories = async () => {
-    const response = await getCategoriesFromApi();
-    setCategories(response.data);
-  };
+  // const getCategories = async () => {
+  //   const response = await getCategoriesFromApi();
+  //   setCategories(response.data);
+  // };
 
   const handleChange = (event) => {
     setOrder({
       ...order,
       [event.target.name]: event.target.value,
     });
+    console.log("date: ", order.date);
   };
 
   const handleSubmit = (event) => {
@@ -40,13 +41,13 @@ const PlaceOrderView = () => {
         phone: "",
         description: "",
         date: event.target.value,
-        category: event.target.value,
+        // category: event.target.value,
         // img: "",
       });
       alert("Your order has been submitted!");
       window.location.reload();
     } else {
-      alert("Name is required.");
+      alert("Required field missing.");
     }
   };
 
@@ -85,13 +86,13 @@ const PlaceOrderView = () => {
         />
         <br />
         <FormLabel>Date</FormLabel>
-        {/* <input
+        <input
           value={order.date}
           onChange={handleChange}
           className="form-control"
           name="date"
           type="date"
-        /> */}
+        />
         {/* <input
           value={order.img}
           onChange={handleChange}
@@ -100,7 +101,7 @@ const PlaceOrderView = () => {
           type="file"
           placeholder="image"
         /> */}
-        <br />
+        {/* <br />
         <FormLabel>Category</FormLabel>
         <select
           onChange={handleChange}
@@ -113,12 +114,14 @@ const PlaceOrderView = () => {
           </option>
           {categories &&
             categories.map((category) => (
-              <option value={category._id}>{category.name}</option>
+              <option key={category._id} defaultValue={category._id}>
+                {category.name}
+              </option>
             ))}
-        </select>
-        <button onClick={handleSubmit} className="btn btn-outline-primary">
+        </select> */}
+        <Button onClick={handleSubmit} className="custom-button">
           Place Order
-        </button>
+        </Button>
       </Form>
     </div>
   );

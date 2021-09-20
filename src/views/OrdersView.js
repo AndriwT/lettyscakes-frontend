@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Button, Modal, Table } from "react-bootstrap";
-import { getOrdersFromApi } from "../services/orderService";
-import { deleteOrderFromApi } from "../services/orderService";
+import {
+  getOrdersFromApi,
+  deleteOrderFromApi,
+  putOrderToApi,
+} from "../services/orderService";
 
 const OrdersView = () => {
   const [orders, setOrders] = useState([]);
@@ -35,6 +38,12 @@ const OrdersView = () => {
     setShow(false);
   };
 
+  const markCompleted = (id, order) => {
+    order.completion = true;
+    putOrderToApi(id, order);
+    window.location.reload();
+  };
+
   return (
     <div className="table-container">
       <div className="orders-table">
@@ -44,8 +53,9 @@ const OrdersView = () => {
               <th>Name</th>
               <th>Phone Number</th>
               <th>Description</th>
-              <th>Category</th>
+              {/* <th>Category</th> */}
               <th>Date</th>
+              <th>Complete</th>
               <th>Delete</th>
             </tr>
           </thead>
@@ -57,13 +67,20 @@ const OrdersView = () => {
                     <td>{order.name}</td>
                     <td>{order.phone}</td>
                     <td className="table-description">{order.description}</td>
-                    <td>{order.category.name}</td>
-                    <td>{order.date}</td>
+                    {/* <td>{order.category.name}</td> */}
+                    <td>{new Date(order.date).toLocaleDateString("en-GB")}</td>
+                    <td>
+                      <input
+                        type="checkbox"
+                        onClick={() => {
+                          markCompleted(order._id, order);
+                        }}
+                      />
+                    </td>
                     <td>
                       <Button
-                        variant="outline-danger"
+                        className="manage-delete"
                         onClick={() => {
-                          // deleteOrder(order._id, i);
                           handleShow(order._id);
                         }}
                       >
@@ -92,7 +109,7 @@ const OrdersView = () => {
             </Modal.Body>
             <Modal.Footer>
               <Button
-                variant="success"
+                className="confirm-button"
                 onClick={() => {
                   deleteOrder();
                 }}
@@ -100,7 +117,7 @@ const OrdersView = () => {
                 Yes
               </Button>
               <Button
-                variant="danger"
+                className="cancel-button"
                 onClick={() => {
                   setShow(false);
                 }}

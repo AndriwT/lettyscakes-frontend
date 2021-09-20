@@ -105,18 +105,24 @@
 
 .admin-container{
   height: 370px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .admin-menu{
-  padding-top: 150px;
+  padding-top: 130px;
   display: flex;
   justify-content: center;
+  flex-direction: column;
 }
 
 .admin-menu-btns{
   padding-top: 10px;
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  width: 100%;
 }
 
 .admin-menu-btn{
@@ -125,15 +131,17 @@
 
 .orders-table{
   width: 1000px;
- 
-
 }
 
 .table-container{
-  margin-top: 40px;
+  margin-top: 20px;
   display: flex;
   justify-content: center;
-  min-height: 330px;
+  min-height: 350px;
+}
+
+.add-edit-sweets{
+  margin-bottom: 20px;
 }
 
 .btn{
@@ -179,8 +187,97 @@
 
 .manage-delete{
   margin-left: 10px;
+  background-color: rgb(190, 54, 54) !important;
+  border: 1px solid rgb(190, 54, 54) !important;
+  border-radius: 15px !important;
+  
 }
 
-.add-edit-sweets{
-  margin-left: 210px;
+.manage-delete:hover {
+  margin-left: 10px;
+  background-color: rgb(109, 33, 33) !important;
+  border: 1px solid white !important;
+  color: white;
 }
+
+.manage-delete-sml{
+  /* margin-left: 10px; */
+  color: rgb(190, 54, 54) !important;
+  background-color: white !important;
+  border: 1px solid rgb(190, 54, 54) !important;
+  border-radius: 30px !important;
+  width: 30px;
+  height: 30px;
+  
+}
+
+.manage-delete-sml:hover {
+  /* margin-left: 10px; */
+  color: white !important;
+  background-color: rgb(190, 54, 54) !important;
+  border: 1px solid white !important;
+}
+
+.custom-button{
+  color: rgb(76, 144, 153) !important;
+  background:white !important;
+  border: 1px solid rgb(76, 144, 153) !important;
+  border-radius: 15px !important;
+  margin-right: 10px !important;
+  width: 100% !important;
+  height: 50px !important;
+  line-height: 38px !important;
+}
+
+.custom-button:hover {
+  background-color: rgb(76, 144, 153) !important;
+  color: white !important;
+}
+
+.edit-custom-button{
+  color: rgb(76, 144, 153) !important;
+  background:white !important;
+  border: 1px solid rgb(76, 144, 153) !important;
+  border-radius: 15px !important;
+  width: 100% !important;
+  height: 40px !important;
+  line-height: 20px !important;
+}
+
+.edit-custom-button:hover {
+  background-color: rgb(76, 144, 153) !important;
+  color: white !important;
+}
+
+.confirm-button{
+  color: white !important;
+  background:rgb(76, 153, 111) !important;
+  border: 1px solid rgb(76, 153, 111) !important;
+  border-radius: 15px !important;
+  margin-right: 5px !important;
+  height: 30px !important;
+  line-height: 15px !important;
+}
+
+.confirm-button:hover{
+  background-color: rgb(37, 95, 63) !important;
+  color: white !important;
+  border: 1px solid white !important;
+}
+
+.cancel-button{
+  color: rgb(85, 85, 85) !important;
+  background:white !important;
+  border: 1px solid rgb(85, 85, 85) !important;
+  border-radius: 15px !important;
+  height: 30px !important;
+  line-height: 15px !important;
+}
+
+.cancel-button:hover{
+  background-color: rgb(85, 85, 85) !important;
+  color: white !important;
+  border: 1px solid white !important;
+}
+
+

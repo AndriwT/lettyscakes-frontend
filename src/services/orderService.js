@@ -12,6 +12,11 @@ export const postOrderToApi = async (order) => {
   return response;
 };
 
+export const putOrderToApi = async (id, order) => {
+  const response = await axios.put(`${apiUrl}/orders/order/${id}`, order);
+  return response;
+};
+
 export const deleteOrderFromApi = async (id) => {
   const response = await axios.delete(`${apiUrl}/orders/order/${id}`);
   return response;

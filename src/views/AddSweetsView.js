@@ -103,9 +103,9 @@ const AddSweetsView = () => {
           type="file"
           placeholder="Image"
         />
-        <button onClick={handleSubmit} className="btn btn-outline-primary">
+        <Button onClick={handleSubmit} className="custom-button">
           Add Dessert
-        </button>
+        </Button>
       </Form>
       <div className="delete-sweets">
         <h4 className="delete-sweets-ul-h4">Current List of Desserts</h4>
@@ -115,7 +115,7 @@ const AddSweetsView = () => {
               <>
                 <li>
                   <Button
-                    variant="outline-danger"
+                    className="manage-delete-sml"
                     size="sm"
                     onClick={() => {
                       handleShow(sweet._id);
@@ -128,11 +128,7 @@ const AddSweetsView = () => {
                 <hr />
               </>
             ))}
-          <Button
-            className="admin-menu-btn"
-            href="/edit-sweets"
-            variant="outline-primary"
-          >
+          <Button className="custom-button" href="/edit-sweets">
             Manage Desserts
           </Button>
         </ul>
@@ -154,7 +150,7 @@ const AddSweetsView = () => {
           </Modal.Body>
           <Modal.Footer>
             <Button
-              variant="success"
+              className="confirm-button"
               onClick={() => {
                 deleteSweet();
               }}
@@ -162,7 +158,7 @@ const AddSweetsView = () => {
               Yes
             </Button>
             <Button
-              variant="outline-secondary"
+              className="cancel-button"
               onClick={() => {
                 setShow(false);
               }}

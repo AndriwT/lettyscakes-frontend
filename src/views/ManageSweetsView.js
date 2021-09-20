@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Button, Table, Modal, FormLabel, Form } from "react-bootstrap";
-import { useHistory } from "react-router";
 import {
   deleteSweetFromApi,
   getSweetsFromApi,
@@ -61,17 +60,13 @@ const ManageSweetsView = () => {
 
   return (
     <>
-      <div className="add-edit-sweets">
-        <Button
-          className="admin-menu-btn"
-          href="/add-sweets"
-          variant="outline-primary"
-        >
-          Add Desserts
-        </Button>
-      </div>
       <div className="table-container">
         <div className="orders-table">
+          <div className="add-edit-sweets">
+            <Button className="custom-button" href="/add-sweets">
+              Add Desserts
+            </Button>
+          </div>
           <Table>
             <thead>
               <tr>
@@ -91,7 +86,7 @@ const ManageSweetsView = () => {
                       <td>${sweet.price}.00</td>
                       <td className="manage-sweets-btns">
                         <Button
-                          variant="outline-primary"
+                          className="edit-custom-button"
                           onClick={() => {
                             handleEditShow(sweet);
                           }}
@@ -99,7 +94,6 @@ const ManageSweetsView = () => {
                           Edit
                         </Button>
                         <Button
-                          variant="outline-danger"
                           className="manage-delete"
                           onClick={() => {
                             // deleteOrder(order._id, i);
@@ -160,7 +154,7 @@ const ManageSweetsView = () => {
               </Modal.Body>
               <Modal.Footer>
                 <Button
-                  variant="success"
+                  className="confirm-button"
                   onClick={() => {
                     handleSave(sweet._id, sweet);
                   }}
@@ -168,7 +162,7 @@ const ManageSweetsView = () => {
                   Save
                 </Button>
                 <Button
-                  variant="outline-secondary"
+                  className="cancel-button"
                   onClick={() => {
                     setEditShow(false);
                   }}
@@ -194,7 +188,7 @@ const ManageSweetsView = () => {
               </Modal.Body>
               <Modal.Footer>
                 <Button
-                  variant="success"
+                  className="confirm-button"
                   onClick={() => {
                     deleteSweet();
                   }}
@@ -202,7 +196,7 @@ const ManageSweetsView = () => {
                   Yes
                 </Button>
                 <Button
-                  variant="outline-secondary"
+                  className="cancel-button"
                   onClick={() => {
                     setShow(false);
                   }}
