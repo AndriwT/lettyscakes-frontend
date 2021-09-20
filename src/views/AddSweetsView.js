@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Button, Modal } from "react-bootstrap";
+import { Button, Form, FormLabel, Modal } from "react-bootstrap";
 import {
   postSweetToApi,
   getSweetsFromApi,
@@ -64,8 +64,9 @@ const AddSweetsView = () => {
 
   return (
     <div className="container mt-5">
-      <form className="orderForm">
+      <Form className="orderForm">
         <h2>New Sweet</h2>
+        <FormLabel>Dessert Name</FormLabel>
         <input
           value={sweet.name}
           onChange={handleChange}
@@ -74,6 +75,8 @@ const AddSweetsView = () => {
           type="text"
           placeholder="Name"
         />
+        <br />
+        <FormLabel>Description</FormLabel>
         <textarea
           value={sweet.description}
           onChange={handleChange}
@@ -82,6 +85,8 @@ const AddSweetsView = () => {
           rows={5}
           placeholder="Description..."
         />
+        <br />
+        <FormLabel>Price</FormLabel>
         <input
           value={sweet.price}
           onChange={handleChange}
@@ -90,6 +95,8 @@ const AddSweetsView = () => {
           type="text"
           placeholder="Price"
         />
+        <br />
+        <FormLabel>Display Image</FormLabel>
         <input
           value={sweet.image}
           onChange={handleChange}
@@ -101,7 +108,7 @@ const AddSweetsView = () => {
         <button onClick={handleSubmit} className="btn btn-outline-primary">
           Add Product
         </button>
-      </form>
+      </Form>
       <div className="delete-sweets">
         <h4 className="delete-sweets-ul-h4">Current List of Desserts</h4>
         <ul className="delete-sweets-ul">

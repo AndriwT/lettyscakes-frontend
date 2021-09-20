@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button } from "react-bootstrap";
+import { Button, Form, FormLabel } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import "../App.css";
 
@@ -25,15 +25,18 @@ const AuthView = () => {
 
   return (
     <div className="container mt-5">
-      <form className="auth-form">
+      <Form className="auth-form">
         <h2>Administration Page</h2>
         <p>Please enter credentials</p>
+        <FormLabel>UserName</FormLabel>
         <input
           className="form-control"
           type="text"
           placeholder="name"
           onChange={(e) => setUser(e.target.value)}
         />
+        <br />
+        <FormLabel>Password</FormLabel>
         <input
           className="form-control"
           type="password"
@@ -47,7 +50,7 @@ const AuthView = () => {
         >
           Login
         </Button>
-      </form>
+      </Form>
     </div>
   );
 };
