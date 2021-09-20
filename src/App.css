@@ -41,8 +41,6 @@
   }
 }
 
-
-
 .section1{
   position: relative;
   text-align: center;
@@ -97,21 +95,50 @@
 .container{
   display: flex;
   justify-content: center;
+  
+} 
+
+.auth-container{
+  display: flex;
+  justify-content: center;
+  margin: 0 400px 0 400px;
+  padding: 50px 0 50px 0;
+  background-color: rgb(243, 243, 243);
+  border-radius: 15px;
+  box-shadow: 0px 5px 7px rgb(192, 192, 192);
+  
 } 
 
 .auth-form{
   height: 320px;
 }
 
+.order-container{
+  margin: 30px 310px 30px 310px;
+  padding: 60px 150px 60px 150px;
+  min-height: 370px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(247, 247, 247);
+  border-radius: 15px;
+  box-shadow: 0px 5px 7px rgb(192, 192, 192);
+}
+
 .admin-container{
+  margin: 30px 420px 30px 420px;
+  padding: 0px 60px 0px 60px;
   height: 370px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: rgb(247, 247, 247);
+  border-radius: 15px;
+  box-shadow: 0px 5px 7px rgb(192, 192, 192);
 }
 
 .admin-menu{
-  padding-top: 130px;
+  padding-top: 100px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -134,10 +161,14 @@
 }
 
 .table-container{
-  margin-top: 20px;
+  margin: 30px 50px 0 50px;
   display: flex;
   justify-content: center;
+  padding-top: 30px;
   min-height: 350px;
+  background-color: rgb(247, 247, 247);
+  border-radius: 15px;
+  box-shadow: 0px 5px 7px rgb(192, 192, 192);
 }
 
 .add-edit-sweets{
@@ -157,7 +188,11 @@
 }
 
 .delete-sweets{
-  margin-left: 50px;
+  margin-left: 80px;
+  background-color: rgb(255, 255, 255);
+  padding: 30px 35px 20px 0;
+  border-radius: 15px;
+  box-shadow: 0px 5px 7px rgb(192, 192, 192);
 }
 
 .delete-sweets-ul{
@@ -190,7 +225,7 @@
   background-color: rgb(190, 54, 54) !important;
   border: 1px solid rgb(190, 54, 54) !important;
   border-radius: 15px !important;
-  
+  box-shadow: 0px 2px 2px rgb(170, 170, 170);
 }
 
 .manage-delete:hover {
@@ -208,7 +243,7 @@
   border-radius: 30px !important;
   width: 30px;
   height: 30px;
-  
+  box-shadow: 0px 2px 2px rgb(170, 170, 170);
 }
 
 .manage-delete-sml:hover {
@@ -227,6 +262,7 @@
   width: 100% !important;
   height: 50px !important;
   line-height: 38px !important;
+  box-shadow: 0px 2px 2px rgb(170, 170, 170);
 }
 
 .custom-button:hover {
@@ -242,6 +278,7 @@
   width: 100% !important;
   height: 40px !important;
   line-height: 20px !important;
+  box-shadow: 0px 2px 2px rgb(170, 170, 170);
 }
 
 .edit-custom-button:hover {
@@ -257,6 +294,7 @@
   margin-right: 5px !important;
   height: 30px !important;
   line-height: 15px !important;
+  box-shadow: 0px 2px 2px rgb(170, 170, 170);
 }
 
 .confirm-button:hover{
@@ -272,6 +310,7 @@
   border-radius: 15px !important;
   height: 30px !important;
   line-height: 15px !important;
+  box-shadow: 0px 2px 2px rgb(170, 170, 170);
 }
 
 .cancel-button:hover{

@@ -52,7 +52,7 @@ const PlaceOrderView = () => {
   };
 
   return (
-    <div key={order._id} className="container mt-5">
+    <div key={order._id} className="order-container mt-5">
       <Form className="orderForm">
         <h2>Place Order</h2>
         <FormLabel>Name</FormLabel>

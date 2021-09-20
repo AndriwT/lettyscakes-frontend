@@ -24,7 +24,6 @@ const NavBar = () => {
           className="d-inline-block align-top"
           style={{ borderRadius: "50px" }}
         />
-        {/* <Navbar.Brand href="#home">Letty's Cakes</Navbar.Brand> */}
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">

@@ -11,6 +11,9 @@ const OrdersView = () => {
   const [show, setShow] = useState(false);
   const [id, setId] = useState("");
 
+  let completed = "Completed";
+  let incomplete = "Incomplete";
+
   const handleShow = (id) => {
     setId(id);
     setShow(true);
@@ -42,6 +45,11 @@ const OrdersView = () => {
     order.completion = true;
     putOrderToApi(id, order);
     window.location.reload();
+    if (order.completion === true) {
+      order.completion.value = "Completed";
+    } else {
+      order.completion.value = "Incomplete";
+    }
   };
 
   return (
@@ -76,6 +84,7 @@ const OrdersView = () => {
                           markCompleted(order._id, order);
                         }}
                       />
+                      <p>{order.completion.value}</p>
                     </td>
                     <td>
                       <Button

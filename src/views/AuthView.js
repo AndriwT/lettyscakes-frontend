@@ -24,7 +24,7 @@ const AuthView = () => {
   };
 
   return (
-    <div className="container mt-5">
+    <div className="auth-container mt-5 ">
       <Form className="auth-form">
         <h2>Administration Page</h2>
         <p>Please enter credentials</p>
